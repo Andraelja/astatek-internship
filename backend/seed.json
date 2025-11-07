@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "_id": "507f1f77bcf86cd799439011",
+      "username": "admin",
+      "email": "admin@example.com",
+      "password": "$2a$10$exampleHashedPassword",
+      "role": "admin",
+      "createdAt": "2023-01-01T00:00:00.000Z",
+      "updatedAt": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439012",
+      "username": "user1",
+      "email": "user1@example.com",
+      "password": "$2a$10$exampleHashedPassword",
+      "role": "user",
+      "createdAt": "2023-01-01T00:00:00.000Z",
+      "updatedAt": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439013",
+      "username": "user2",
+      "email": "user2@example.com",
+      "password": "$2a$10$exampleHashedPassword",
+      "role": "user",
+      "createdAt": "2023-01-01T00:00:00.000Z",
+      "updatedAt": "2023-01-01T00:00:00.000Z"
+    }
+  ],
+  "parkingLots": [
+    {
+      "_id": "507f1f77bcf86cd799439021",
+      "name": "Downtown Parking",
+      "location": "123 Main St, City",
+      "total_slots": 50,
+      "available_slots": 45,
+      "createdAt": "2023-01-01T00:00:00.000Z",
+      "updatedAt": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439022",
+      "name": "Mall Parking",
+      "location": "456 Shopping Ave, City",
+      "total_slots": 100,
+      "available_slots": 90,
+      "createdAt": "2023-01-01T00:00:00.000Z",
+      "updatedAt": "2023-01-01T00:00:00.000Z"
+    }
+  ],
+  "parkingSlots": [
+    {
+      "_id": "507f1f77bcf86cd799439031",
+      "lot_id": "507f1f77bcf86cd799439021",
+      "slot_number": "A1",
+      "status": "AVAILABLE",
+      "last_updated": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439032",
+      "lot_id": "507f1f77bcf86cd799439021",
+      "slot_number": "A2",
+      "status": "OCCUPIED",
+      "last_updated": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439033",
+      "lot_id": "507f1f77bcf86cd799439022",
+      "slot_number": "B1",
+      "status": "AVAILABLE",
+      "last_updated": "2023-01-01T00:00:00.000Z"
+    }
+  ],
+  "bookings": [
+    {
+      "_id": "507f1f77bcf86cd799439041",
+      "user_id": "507f1f77bcf86cd799439012",
+      "lot_id": "507f1f77bcf86cd799439021",
+      "slot_id": "507f1f77bcf86cd799439031",
+      "status": "RESERVED",
+      "checkin_time": null,
+      "checkout_time": null,
+      "createdAt": "2023-01-01T00:00:00.000Z",
+      "updatedAt": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439042",
+      "user_id": "507f1f77bcf86cd799439013",
+      "lot_id": "507f1f77bcf86cd799439022",
+      "slot_id": "507f1f77bcf86cd799439033",
+      "status": "OCCUPIED",
+      "checkin_time": "2023-01-01T10:00:00.000Z",
+      "checkout_time": null,
+      "createdAt": "2023-01-01T00:00:00.000Z",
+      "updatedAt": "2023-01-01T00:00:00.000Z"
+    }
+  ]
+}
