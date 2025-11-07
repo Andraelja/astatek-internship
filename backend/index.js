@@ -24,6 +24,9 @@ app.use('/api/users', userRoutes);
 const parkingLotRoutes = require('./routes/parkingLotRoutes');
 app.use('/api/parking-lot', parkingLotRoutes);
 
+const parkingSlotRoutes = require('./routes/parkingSlotRoutes');
+app.use('/api/parking-slot', parkingSlotRoutes);
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
