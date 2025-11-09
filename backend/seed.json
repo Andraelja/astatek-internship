@@ -1,98 +1,84 @@
 {
   "users": [
     {
-      "_id": "507f1f77bcf86cd799439011",
       "username": "admin",
       "email": "admin@example.com",
-      "password": "$2a$10$exampleHashedPassword",
-      "role": "admin",
-      "createdAt": "2023-01-01T00:00:00.000Z",
-      "updatedAt": "2023-01-01T00:00:00.000Z"
+      "password": "admin123",
+      "role": "admin"
     },
     {
-      "_id": "507f1f77bcf86cd799439012",
       "username": "user1",
       "email": "user1@example.com",
-      "password": "$2a$10$exampleHashedPassword",
-      "role": "user",
-      "createdAt": "2023-01-01T00:00:00.000Z",
-      "updatedAt": "2023-01-01T00:00:00.000Z"
+      "password": "user123",
+      "role": "user"
     },
     {
-      "_id": "507f1f77bcf86cd799439013",
       "username": "user2",
       "email": "user2@example.com",
-      "password": "$2a$10$exampleHashedPassword",
-      "role": "user",
-      "createdAt": "2023-01-01T00:00:00.000Z",
-      "updatedAt": "2023-01-01T00:00:00.000Z"
+      "password": "user123",
+      "role": "user"
     }
   ],
   "parkingLots": [
     {
-      "_id": "507f1f77bcf86cd799439021",
-      "name": "Downtown Parking",
-      "location": "123 Main St, City",
-      "total_slots": 50,
-      "available_slots": 45,
-      "createdAt": "2023-01-01T00:00:00.000Z",
-      "updatedAt": "2023-01-01T00:00:00.000Z"
+      "name": "Downtown Parking Lot A",
+      "location": "123 Main St, Downtown",
+      "total_slots": 20,
+      "available_slots": 15
     },
     {
-      "_id": "507f1f77bcf86cd799439022",
-      "name": "Mall Parking",
-      "location": "456 Shopping Ave, City",
-      "total_slots": 100,
-      "available_slots": 90,
-      "createdAt": "2023-01-01T00:00:00.000Z",
-      "updatedAt": "2023-01-01T00:00:00.000Z"
+      "name": "Mall Parking Floor 1",
+      "location": "456 Shopping Ave, Mall",
+      "total_slots": 25,
+      "available_slots": 20
     }
   ],
   "parkingSlots": [
-    {
-      "_id": "507f1f77bcf86cd799439031",
-      "lot_id": "507f1f77bcf86cd799439021",
-      "slot_number": "A1",
-      "status": "AVAILABLE",
-      "last_updated": "2023-01-01T00:00:00.000Z"
-    },
-    {
-      "_id": "507f1f77bcf86cd799439032",
-      "lot_id": "507f1f77bcf86cd799439021",
-      "slot_number": "A2",
-      "status": "OCCUPIED",
-      "last_updated": "2023-01-01T00:00:00.000Z"
-    },
-    {
-      "_id": "507f1f77bcf86cd799439033",
-      "lot_id": "507f1f77bcf86cd799439022",
-      "slot_number": "B1",
-      "status": "AVAILABLE",
-      "last_updated": "2023-01-01T00:00:00.000Z"
-    }
+    {"lot_id": "LOT_ID_1", "slot_number": "A01", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A02", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A03", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A04", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A05", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A06", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A07", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A08", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A09", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A10", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A11", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A12", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A13", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A14", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A15", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A16", "status": "OCCUPIED"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A17", "status": "OCCUPIED"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A18", "status": "OCCUPIED"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A19", "status": "OCCUPIED"},
+    {"lot_id": "LOT_ID_1", "slot_number": "A20", "status": "OCCUPIED"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B01", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B02", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B03", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B04", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B05", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B06", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B07", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B08", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B09", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B10", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B11", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B12", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B13", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B14", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B15", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B16", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B17", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B18", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B19", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B20", "status": "AVAILABLE"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B21", "status": "OCCUPIED"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B22", "status": "OCCUPIED"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B23", "status": "OCCUPIED"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B24", "status": "OCCUPIED"},
+    {"lot_id": "LOT_ID_2", "slot_number": "B25", "status": "OCCUPIED"}
   ],
-  "bookings": [
-    {
-      "_id": "507f1f77bcf86cd799439041",
-      "user_id": "507f1f77bcf86cd799439012",
-      "lot_id": "507f1f77bcf86cd799439021",
-      "slot_id": "507f1f77bcf86cd799439031",
-      "status": "RESERVED",
-      "checkin_time": null,
-      "checkout_time": null,
-      "createdAt": "2023-01-01T00:00:00.000Z",
-      "updatedAt": "2023-01-01T00:00:00.000Z"
-    },
-    {
-      "_id": "507f1f77bcf86cd799439042",
-      "user_id": "507f1f77bcf86cd799439013",
-      "lot_id": "507f1f77bcf86cd799439022",
-      "slot_id": "507f1f77bcf86cd799439033",
-      "status": "OCCUPIED",
-      "checkin_time": "2023-01-01T10:00:00.000Z",
-      "checkout_time": null,
-      "createdAt": "2023-01-01T00:00:00.000Z",
-      "updatedAt": "2023-01-01T00:00:00.000Z"
-    }
-  ]
+  "bookings": []
 }

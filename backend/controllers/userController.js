@@ -18,11 +18,22 @@ exports.registerUser = async (req, res) => {
       username,
       email,
       password: hashedPassword,
-      role: role || "USER",
+      role: role || "user",
     });
+
+    const token = jwt.sign(
+      {
+        id: newUser._id,
+        username: newUser.username,
+        role: newUser.role,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
+    );
 
     res.status(201).json({
       message: "Registrasi berhasil",
+      token,
       user: {
         id: newUser._id,
         username: newUser.username,

@@ -15,8 +15,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Port dari environment variable atau default 3000
-const port = process.env.PORT || 3000;
+// Port dari environment variable atau default 3001
+const port = process.env.PORT || 3001;
 
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/users', userRoutes);
@@ -28,10 +28,10 @@ const parkingSlotRoutes = require('./routes/parkingSlotRoutes');
 app.use('/api/parking-slot', parkingSlotRoutes);
 
 const bookingRoutes = require('./routes/bookingRoutes');
-app.use('/api/booking', bookingRoutes);
+app.use('/api/bookings', bookingRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("SmartPark API");
 });
 
 app.listen(port, () => {

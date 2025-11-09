@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require('bcryptjs');
 require('dotenv').config();
 
 const User = require('./models/userModel');
@@ -11,7 +12,7 @@ const Booking = require('./models/bookingModel');
 const seedDatabase = async () => {
   try {
     // Connect to database
-    await mongoose.connect(process.env.MONGO_URL);
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log('Connected to database for seeding');
 
     // Read seed data
@@ -23,22 +24,36 @@ const seedDatabase = async () => {
     await ParkingSlot.deleteMany({});
     await Booking.deleteMany({});
 
-    // Insert users
+    // Insert users with hashed passwords
     if (seedData.users && seedData.users.length > 0) {
-      await User.insertMany(seedData.users);
+      const usersWithHashedPasswords = await Promise.all(seedData.users.map(async (user) => {
+        const hashedPassword = await bcrypt.hash(user.password, 10);
+        return { ...user, password: hashedPassword };
+      }));
+      await User.insertMany(usersWithHashedPasswords);
       console.log('Users seeded');
     }
 
     // Insert parking lots
     if (seedData.parkingLots && seedData.parkingLots.length > 0) {
-      await ParkingLot.insertMany(seedData.parkingLots);
+      const insertedLots = await ParkingLot.insertMany(seedData.parkingLots);
       console.log('Parking lots seeded');
-    }
 
-    // Insert parking slots
-    if (seedData.parkingSlots && seedData.parkingSlots.length > 0) {
-      await ParkingSlot.insertMany(seedData.parkingSlots);
-      console.log('Parking slots seeded');
+      // Map lot names to IDs for slots
+      const lotMap = {};
+      insertedLots.forEach((lot, index) => {
+        lotMap[`LOT_ID_${index + 1}`] = lot._id;
+      });
+
+      // Insert parking slots with correct lot_ids
+      if (seedData.parkingSlots && seedData.parkingSlots.length > 0) {
+        const slotsWithCorrectIds = seedData.parkingSlots.map(slot => ({
+          ...slot,
+          lot_id: lotMap[slot.lot_id]
+        }));
+        await ParkingSlot.insertMany(slotsWithCorrectIds);
+        console.log('Parking slots seeded');
+      }
     }
 
     // Insert bookings

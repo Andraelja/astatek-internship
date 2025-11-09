@@ -5,13 +5,16 @@ const {
   createData,
   getDataById,
   editData,
-  deleteData
+  deleteData,
+  getSlotsByLot
 } = require("../controllers/parkingSlotController");
+const { verifyToken, requireAdmin } = require("../middlewares/auth");
 
-router.get("/", getAll);
-router.post("/", createData);
-router.get("/:id", getDataById);
-router.put("/:id", editData);
-router.delete("/:id", deleteData);
+router.get("/", verifyToken, getAll);
+router.post("/", verifyToken, requireAdmin, createData);
+router.get("/:id", verifyToken, getDataById);
+router.put("/:id", verifyToken, requireAdmin, editData);
+router.delete("/:id", verifyToken, requireAdmin, deleteData);
+router.get("/lot/:lotId", verifyToken, getSlotsByLot);
 
 module.exports = router;
